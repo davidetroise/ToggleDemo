@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLightOn: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Toggle(isOn: $isLightOn) {
+                Image(systemName: isLightOn ? "lightbulb.fill" : "lightbulb")
+                    .font(.largeTitle)
+                    .foregroundColor(.yellow)
+            }
+        }
+        .padding()
     }
 }
 
